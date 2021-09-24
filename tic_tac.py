@@ -60,7 +60,6 @@ def board_view(board):
 
 def is_enter_numbers(coordinates):
     def is_number(n): return n in [str(x) for x in range(10)]
-
     is_len = len(coordinates) == 3
     return is_len and is_number(coordinates[0]) and is_number(coordinates[2])
 
