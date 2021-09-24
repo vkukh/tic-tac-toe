@@ -103,10 +103,10 @@ def is_win(board, n, play_as):
     board_transpose = [''.join(list(i)) for i in zip(*board)]
     left_diagonal = [n[1][n[0]] for n in enumerate([list(i) for i in board])]
     right_diagonal = [n[1][2 - n[0]] for n in enumerate([list(i) for i in board])]
-    diagonals = [''.join(left_diagonal), ''.join(right_diagonal)]
+    all_diagonals = [''.join(left_diagonal), ''.join(right_diagonal)]
     is_horizontal = True if board.count(n * play_as) else False
     is_vertical = True if board_transpose.count(n * play_as) else False
-    is_diagonal = True if diagonals.count(n * play_as) else False
+    is_diagonal = True if all_diagonals.count(n * play_as) else False
     return any([is_horizontal, is_vertical, is_diagonal])
 
 
